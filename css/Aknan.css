@@ -1,0 +1,476 @@
+/* إعدادات عامة */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+ }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0183a5;
+}
+
+
+/* الهيدر */
+header {
+    background-color: #ffffff;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 999; /* تحديد ترتيب الطبقات ليكون الهيدر فوق العناصر الأخرى */
+    height: 120px; 
+}
+/* ضبط الهيدر واللوجو */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px !important; /* ارتفاع الهيدر الافتراضي */
+}
+
+.logo img {
+    width: 120px; /* ارتفاع اللوجو الافتراضي */
+}
+
+/* إخفاء الأزرار في الشاشات الصغيرة */
+.menu-buttons {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    header {
+        height: auto; /* ارتفاع الهيدر للشاشات الصغيرة */
+    }
+
+    .logo img {
+        max-height: 65px; /* ارتفاع اللوجو للشاشات الصغيرة */
+    }
+
+    .navigation{
+        display: none; /* إخفاء الأزرار في الشاشات الصغيرة */
+    }
+}
+
+/* تنسيق زر العربة */
+.cart-button {
+    float: right;  /*لتحديد موقعه على اليمين في الهيدر */
+    /* أي تنسيقات إضافية تريدها لزر العربة */
+}
+
+
+/* اللوجو */
+.logo img {
+    max-width: 150px;
+}
+
+/* الأزرار في الهيدر */
+.navigation {
+    margin-right: 20px;
+}
+
+.navigation button {
+    background-color: #0183a5; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.navigation :last-child{
+    margin-right: 60px;
+}
+/* هشتاج #أكنان أحسن_اختيار */
+.hashtag {
+    font-size: 30px;
+    color: #0183a5; /* لون النص */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hashtag p {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* محتوى المنتجات */
+.products {
+    padding-top: 100px; /* ليبدأ عرض المحتوى بعد الهيدر الثابت */
+}
+/* إعدادات CSS العامة */
+
+/* الصفوف */
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* تباعد بين الصفوف */
+}
+
+/* النموذج الأساسي لعنصر المنتج */
+.product {
+    width: calc(25% - 10px); /* 25% لأربعة منتجات في الصف */
+    margin-bottom: 20px; /* تباعد بين المنتجات */
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 4px solid #ffb300; 
+    margin-right:1%; 
+    margin-left: 1%;
+}
+img:hover .big{
+    width: 1000%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 99999;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+
+}
+/* للشاشات الصغيرة */
+@media (max-width: 767px) {
+    .product {
+        width: calc(45% - 10px); /* عرض المنتج بنسبة 50% لشاشات الهواتف */
+        flex-direction: column;
+        flex-wrap: wrap;
+ 
+    }
+    .product-row{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        top:-10px;
+        margin-bottom: 0px;
+
+    }
+    .product-details h3{
+        font-size: 16px !important;
+        margin-top: -10px;
+        }
+        .product-details p {
+            font-size: 10px !important;
+            }
+    .product-details {
+    font-size: 10px !important;
+    padding: 11px !important;
+    }
+    .buttons{
+        padding: 2px 4px;
+        font-size: 14px;
+        display: block !important;
+        flex-wrap: nowrap;
+        transform: translateX(0px) !important;
+    }
+    .hashtag p{
+        margin-top: -15px !important;
+        font-size: 21px !important;
+    }
+    .button1,
+    .button2{
+     width:100px !important;
+        padding: 4px 4px;
+        font-size: 14px !important;
+        display: inline-block !important;
+        position: relative;
+        flex-wrap: nowrap;
+        margin-left: 20px !important;
+
+    }
+    .product-image{
+        position: relative;
+        overflow: hidden;
+        width: 100px;
+        height: 150px !important; /* تحديد ارتفاع الصورة */
+        object-fit: cover !important;
+    }
+    .product-details .button1 {
+        background-color: #0183a5;
+        color: #ffffff;
+        border: none;
+        padding: 4px 4px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        display: inline-block; /* عرض الأزرار بجانب بعضها */
+        margin-right: 10px; /* مسافة بين الأزرار */
+        transition: transform 0.3s ease; /* تأثير الانتقال */
+    }
+    .button1 {
+        display: none !important; /* إخفاء زر "أضف إلى العربة" */
+        margin-left: 5px !important;
+    }
+    
+.products {
+    padding-top: 60px;
+}
+
+}
+
+/* للشاشات المتوسطة */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .product {
+        width: calc(25% - 10px); /* عرض المنتج بنسبة 33.33% للشاشات المتوسطة */
+
+    }
+    .product-row{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+    }
+    .product-details p{
+        font-size: 10px;
+        }
+        .button1,
+        .button2{
+         width:100px;
+            padding: 2px 4px;
+            font-size: 100%;
+            display: inline-block;
+        }
+        .product-image{
+            height: 100px;
+            width: 50%;
+        }
+}
+
+/* للشاشات الكبيرة */
+@media(min-width: 1024px) {
+    .product {
+        width: calc(25% - 10px); /* عرض المنتج بنسبة 25% للشاشات الكبيرة */
+    }
+    .product-row{
+        flex-wrap: nowrap;
+    }
+}
+
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px; /* تحديد ارتفاع الصورة */
+    
+}
+.button2 a{
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    color: white;
+}
+
+.product-image img {
+    transition: transform 0.3s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0,); /* أسود مع شفافية 40% */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay-content {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.product-image:hover img {
+    transform: scale(1.1); /* تكبير الصورة */
+}
+.product-image:hover .big{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    z-index: 99999;
+    display: flex;
+}
+
+.product-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.product-image:hover .overlay-content {
+    opacity: 1;
+}
+
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* أسلوب العرض للصورة الكبيرة */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.big-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* تعديل الصورة عند التحويم */
+.product-image img {
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.2); /* تكبير الصورة عند التحويم */
+}
+
+/* تفاصيل المنتج */
+.product-details {
+    padding: 20px;
+    direction: rtl; /* تغيير اتجاه الكتابة إلى اليمين */
+}
+
+.product-details h3 {
+    margin-bottom: 0px;
+    direction: rtl; /* استعادة اتجاه الكتابة للنص الرئيسي إلى اليسار */
+    font-size: 21px;
+    top:0;
+}
+.product-details p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.button1,
+.button2 {
+    background-color: #0183a5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 5px; /* مسافة بين الأزرار */
+    display: inline-block;
+}
+
+
+
+
+.product-details button:hover {
+    transform: scale(1.1); /* تكبير الزر عند التحويب */
+}
+
+
+.product-details p {
+    margin-bottom: 4px;
+}
+
+.product-details button {
+    background-color: #0183a5;
+    color: #ffffff;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: inline-block; /* عرض الأزرار بجانب بعضها */
+    margin-right: 10px; /* مسافة بين الأزرار */
+    transition: transform 0.3s ease; /* تأثير الانتقال */
+}
+/* تنسيق جملة Sold Out */
+.sold-out {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.7); /* يمكنك تغيير اللون هنا */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none; /* يكون مخفيًا في البداية */
+    width: 100%;
+    text-align: center;
+}
+
+.product .sold-out {
+    display: block; /* عرضه عند تحويم الماوس فوق المنتج */
+}
+
+
+/* زر لعرض المزيد من المنتجات */
+.load-more {
+    text-align: center;
+    padding: 20px;
+}
+
+.load-more button {
+    background-color: #0183a5; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+/* المقاسات */
+
+.sizes h2{
+    font-size: 55px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+/* الفوتر */
+footer {
+    background-color: #eaa548; /* لون الخلفية */
+    color: #0183a5; /* لون النص */
+    text-align: center;
+    padding: 20px;
+}
+/* تغيير حجم الأيقونات وتنسيقها */
+.social-icons a {
+    margin-right: 30px; /* تباعد بين الروابط */
+    font-size: 28px; /* حجم الأيقونات */
+    color: #333; /* لون الأيقونات */
+}
+
+/* تغيير لون الأيقونات عند التحويل (hover) */
+.social-icons a:hover {
+    color: #0183a5; /* لون عند التحويل */
+}
+
